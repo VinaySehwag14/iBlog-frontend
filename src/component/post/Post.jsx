@@ -1,4 +1,5 @@
 import "./post.css";
+import { Link } from "react-router-dom";
 
 const Post = ({ post }) => {
   return (
@@ -17,7 +18,9 @@ const Post = ({ post }) => {
             <span className="postCat">{c.name}</span>
           ))}
         </div>
-        <span className="postTitle">{post.title}</span>
+        <Link to={`/post/${post._id}`} className="link">
+          <span className="postTitle">{post.title}</span>
+        </Link>
         <hr />
         <span className="postDate">
           {new Date(post.createdAt).toDateString()}
