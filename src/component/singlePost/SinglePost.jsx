@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import "./singlePost.css";
 import { API } from "../../backend";
+import { Link } from "react-router-dom";
 
 const SinglePost = () => {
   const [post, setPost] = useState([]);
@@ -38,7 +39,10 @@ const SinglePost = () => {
         </h1>
         <div className="singlePostInfo">
           <span className="singlePostAuthor">
-            Author: <b>{post.username}</b>
+            Author:
+            <Link to={`/?user=${post.username}`} className="link">
+              <b>{post.username}</b>
+            </Link>
           </span>
           <span className="singlePostDate">
             {new Date(post.createdAt).toDateString()}

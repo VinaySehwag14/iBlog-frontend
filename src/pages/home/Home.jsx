@@ -5,19 +5,22 @@ import "./home.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { API } from "../../backend";
+import { useLocation } from "react-router";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
+  const { search } = useLocation();
+  console.log(search);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await axios.get(`${API}/post`);
+      const res = await axios.get(`${API}/post` + search);
       //*comment for checking post
-      console.log(res);
       setPosts(res.data);
+      console.log(res.data);
     };
     fetchPosts();
-  }, []);
+  }, [search]);
   return (
     <>
       <Header />
