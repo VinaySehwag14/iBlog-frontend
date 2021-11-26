@@ -1,7 +1,18 @@
 import { Facebook, Instagram, Pinterest, Twitter } from "@mui/icons-material";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import "./sidebar.css";
+import { API } from "../../backend";
 
 const Sidebar = () => {
+  const [cat, setCat] = useState([]);
+
+  useEffect(() => {
+    const getCats = async () => {
+      const res = await axios.get(`${API}/categories`);
+    };
+    getCats();
+  }, []);
   return (
     <div className="sidebar">
       <div className="sidebarItem">

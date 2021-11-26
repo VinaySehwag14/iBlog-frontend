@@ -18,6 +18,7 @@ const SinglePost = () => {
       console.log(res);
       setPost(res.data);
     };
+    console.log("getPOST", getPost);
     getPost();
   }, [path]);
 
