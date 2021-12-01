@@ -11,7 +11,12 @@ import { Context } from "../../context/Context";
 import "./topbar.css";
 
 const TopBar = () => {
-  const { user } = useContext(Context);
+  const { user, dispatch } = useContext(Context);
+
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" });
+  };
+
   return (
     <div className="top">
       <div className="topLeft">
@@ -42,16 +47,14 @@ const TopBar = () => {
               WRITE
             </Link>
           </ul>
-          <ul className="topListItem">{user && "LOGOUT"}</ul>
+          <ul className="topListItem link" onClick={handleLogout}>
+            {user && "LOGOUT"}
+          </ul>
         </ul>
       </div>
       <div className="topRight">
         {user ? (
-          <img
-            className="topImage"
-            src="https://images.pexels.com/users/avatars/44735047/vinay-sehwag-329.jpeg?auto=compress&fit=crop&h=256&w=256"
-            alt="Ownerimage"
-          />
+          <img className="topImage" src={user.profilePic} alt="Ownerimage" />
         ) : (
           <ul className="topList">
             <li className="topListItem">

@@ -11,6 +11,10 @@
   z-index: 55;
 }
 
+.link {
+  cursor: pointer;
+}
+
 .topLeft,
 .topRight {
   flex: 3;
