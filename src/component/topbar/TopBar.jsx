@@ -5,11 +5,13 @@ import {
   Search,
   Twitter,
 } from "@mui/icons-material";
+import { useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
+import { Context } from "../../context/Context";
 import "./topbar.css";
 
 const TopBar = () => {
-  const user = false;
+  const { user } = useContext(Context);
   return (
     <div className="top">
       <div className="topLeft">
