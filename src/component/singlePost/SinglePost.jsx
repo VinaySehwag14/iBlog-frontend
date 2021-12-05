@@ -1,17 +1,19 @@
 import { Delete, Edit } from "@mui/icons-material";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import "./singlePost.css";
 import { API } from "../../backend";
 import { Link } from "react-router-dom";
+import { Context } from "../../context/Context";
 
 const SinglePost = () => {
-  const [post, setPost] = useState([]);
+  const [post, setPost] = useState({});
   const location = useLocation();
   //*location value
   // console.log("locationVal", location.pathname.split("/")[2]);
-  const path = ("locationVal", location.pathname.split("/")[2]);
+  const path = location.pathname.split("/")[2];
+  const PF = "http://localhost:5050/images/";
 
   useEffect(() => {
     const getPost = async () => {
@@ -27,7 +29,7 @@ const SinglePost = () => {
     <div className="singlePost">
       <div className="singlePostWrapper">
         {post.photo && (
-          <img src={post.photo} alt="blog pic" className="singlePostImg" />
+          <img src={PF + post.photo} alt="blog pic" className="singlePostImg" />
         )}
 
         <h1 className="singlePostTitle">
