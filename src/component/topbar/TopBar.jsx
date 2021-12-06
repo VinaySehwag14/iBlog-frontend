@@ -12,6 +12,7 @@ import "./topbar.css";
 
 const TopBar = () => {
   const { user, dispatch } = useContext(Context);
+  const PF = "http://localhost:5050/images/";
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
@@ -19,10 +20,34 @@ const TopBar = () => {
   return (
     <div className="top">
       <div className="topLeft">
-        <Facebook className="topIcon" />
-        <Instagram className="topIcon" />
-        <Pinterest className="topIcon" />
-        <Twitter className="topIcon" />
+        <a
+          href="https://www.facebook.com/"
+          rel="noreferrer noopener"
+          target="_blank"
+        >
+          <Facebook className="topIcon" />
+        </a>
+        <a
+          href="https://www.instagram.com/travel/"
+          rel="noreferrer noopener"
+          target="_blank"
+        >
+          <Instagram className="topIcon" />
+        </a>
+        <a
+          href="https://in.pinterest.com/pin/672162313142402241/"
+          rel="noreferrer noopener"
+          target="_blank"
+        >
+          <Pinterest className="topIcon" />
+        </a>
+        <a
+          href="https://twitter.com/VinaySehwag14"
+          rel="noreferrer noopener"
+          target="_blank"
+        >
+          <Twitter className="topIcon" />
+        </a>
       </div>
       <div className="topCenter">
         <ul className="topList">
@@ -46,18 +71,20 @@ const TopBar = () => {
               WRITE
             </Link>
           </ul>
-          <ul className="topListItem" onClick={handleLogout}>
+          <ul className="topListItem link" onClick={handleLogout}>
             {user && "LOGOUT"}
           </ul>
         </ul>
       </div>
       <div className="topRight">
         {user ? (
-          <img
-            className="topImage"
-            src="https://images.pexels.com/users/avatars/44735047/vinay-sehwag-329.jpeg?auto=compress&fit=crop&h=256&w=256"
-            alt="Ownerimage"
-          />
+          <Link to="/settings">
+            <img
+              className="topImage"
+              src={PF + user.profilePic}
+              alt="Authorimage"
+            />
+          </Link>
         ) : (
           <ul className="topList">
             <li className="topListItem">

@@ -11,6 +11,10 @@
   z-index: 55;
 }
 
+.link {
+  cursor: pointer;
+}
+
 .topLeft,
 .topRight {
   flex: 3;
@@ -48,6 +52,7 @@
   height: 40px;
   object-fit: cover;
   border-radius: 15px;
+  cursor: pointer;
 }
 
 .searchIcon {
