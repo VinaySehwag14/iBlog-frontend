@@ -14,7 +14,7 @@ const Setting = () => {
   const [success, setSuccess] = useState(false);
 
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:5050/images/";
+  const PF = "https://ibloog.herokuapp.com/images/";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
