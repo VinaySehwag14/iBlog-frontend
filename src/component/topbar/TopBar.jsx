@@ -12,7 +12,7 @@ import "./topbar.css";
 
 const TopBar = () => {
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:5050/images/";
+  const PF = "https://ibloog.herokuapp.com/images/";
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
