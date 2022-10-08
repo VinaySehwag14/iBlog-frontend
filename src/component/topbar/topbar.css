@@ -13,8 +13,11 @@
 
 .link {
   cursor: pointer;
+  transition: .7s;
 }
-
+.link:hover{
+  color: white;
+}
 .topLeft,
 .topRight {
   flex: 3;
@@ -45,8 +48,11 @@
   margin-right: 10px;
   color: #444;
   cursor: pointer;
+  transition: .8s;
 }
-
+.topIcon:hover{
+  color: white;
+}
 .topImage {
   width: 40px;
   height: 40px;
