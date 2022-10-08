@@ -32,6 +32,13 @@
   border: none;
 }
 
+.registerFiin {
+  margin-top: 20px;
+  display: flex;
+  background-color:red;
+  flex-direction: column;
+}
+
 .registerButton {
   margin-top: 20px;
   cursor: pointer;
