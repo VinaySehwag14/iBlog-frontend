@@ -47,6 +47,13 @@
   background-color: rgb(255, 167, 167);
 }
 
+@media (max-width:1020px){
+}
+.loginButton:disabled {
+  cursor: not-allowed;
+  background-color: rgb(255, 167, 167);
+}
+
 .loginRegisterButton {
   position: absolute;
   top: 60px;
