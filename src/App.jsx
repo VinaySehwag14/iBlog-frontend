@@ -6,6 +6,7 @@ import Write from "./pages/write/Write";
 import Setting from "./pages/settings/Setting";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
+import PageNotFound from "./component/errorPage/errorPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Context } from "./context/Context";
 
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="write" element={user ? <Write /> : <Login />} />
         <Route path="settings" element={user ? <Setting /> : <Register />} />
         <Route path="/post/:postId" element={<Single />} />
+        <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
     </BrowserRouter>
   );
