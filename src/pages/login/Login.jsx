@@ -14,6 +14,7 @@ const Login = () => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
+      console.log(`${API}`, "api 😂😂");
       const res = await axios.post(`${API}/auth/login`, {
         username: userRef.current.value,
         password: passwordRef.current.value,

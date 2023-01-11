@@ -13,7 +13,7 @@ const SinglePost = () => {
   //*location value
   // console.log("locationVal", location.pathname.split("/")[2]);
   const path = location.pathname.split("/")[2];
-  const PF = "https://ibloog.herokuapp.com/images/";
+  const PF = "https://iblog-backend.onrender.com/images/";
   const { user } = useContext(Context);
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
