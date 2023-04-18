@@ -43,6 +43,7 @@ const Setting = () => {
     try {
       const res = await axios.put(`${API}/user/` + user._id, updatedUser);
       setSuccess(true);
+console.log("res of profile pix ", res.data);
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
 
       console.log(user);
