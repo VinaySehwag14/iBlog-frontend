@@ -48,6 +48,7 @@ console.log("res of profile pix ", res.data);
 
       console.log(user);
     } catch (err) {
+console.log(err,"this is error in setting")
       dispatch({ type: "UPDATE_FAILURE" });
     }
   };
