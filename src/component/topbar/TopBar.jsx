@@ -2,7 +2,6 @@ import {
   Facebook,
   Instagram,
   Pinterest,
-  Search,
   Twitter,
 } from "@mui/icons-material";
 import { useContext } from "react";
@@ -79,7 +78,7 @@ const TopBar = () => {
       <div className="topRight">
         {user ? (
           <Link to="/settings">
-         { user.profilePic === "" ? <img className="topImage" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fvectors%2Favatar-icon-placeholder-facebook-1577909%2F&psig=AOvVaw0aDIMEO2FTrE_ouNhXRErh&ust=1681903269569000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNj0wYmos_4CFQAAAAAdAAAAABAE"
+         { user.profilePic === "" ? <img className="topImage" src="https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
       alt="Author" /> :
             <img
               className="topImage"
@@ -102,8 +101,6 @@ const TopBar = () => {
             </li>
           </ul>
         )}
-
-        <Search className="searchIcon" />
       </div>
       <Outlet />
     </div>
