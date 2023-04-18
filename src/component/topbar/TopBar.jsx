@@ -79,13 +79,13 @@ const TopBar = () => {
       <div className="topRight">
         {user ? (
           <Link to="/settings">
-         { user.profilePic ?
+         { user.profilePic === "" ? <img className="topImage" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fvectors%2Favatar-icon-placeholder-facebook-1577909%2F&psig=AOvVaw0aDIMEO2FTrE_ouNhXRErh&ust=1681903269569000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNj0wYmos_4CFQAAAAAdAAAAABAE"
+      alt="Author" /> :
             <img
               className="topImage"
               src={PF + user.profilePic}
               alt="Authorimage"
-            /> : <img className="topImage" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fvectors%2Favatar-icon-placeholder-facebook-1577909%2F&psig=AOvVaw0aDIMEO2FTrE_ouNhXRErh&ust=1681903269569000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNj0wYmos_4CFQAAAAAdAAAAABAE"
-      alt="Author" />
+            />  
 }
           </Link>
         ) : (
